@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="cyprus">#184D47</color>
+    <color name="olivine">#96BB7C</color>
+    <color name="golden_glow">#FAD586</color>
+    <color name="mandy">#C64756</color>
 </resources>
