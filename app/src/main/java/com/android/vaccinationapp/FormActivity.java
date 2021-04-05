@@ -1,24 +1,24 @@
 package com.android.vaccinationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
-public class DashboardActivity extends AppCompatActivity {
+public class FormActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_form);
 
-        CardView form = findViewById(R.id.form);
-        form.setOnClickListener(new View.OnClickListener() {
+        TextView filledform = findViewById(R.id.alreadyFilledForm);
+        filledform.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, FormActivity.class));
+                //startActivity(new Intent(FormActivity.this, .class));
             }
         });
     }
