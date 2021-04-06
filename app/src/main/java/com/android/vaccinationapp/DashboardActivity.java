@@ -18,7 +18,7 @@ public class DashboardActivity extends AppCompatActivity {
         form.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, FormActivity.class));
+                startActivity(new Intent(DashboardActivity.this, RequestFormActivity.class));
             }
         });
     }
