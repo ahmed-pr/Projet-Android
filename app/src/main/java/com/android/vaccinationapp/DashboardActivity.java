@@ -21,5 +21,21 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this, RequestFormActivity.class));
             }
         });
+
+        CardView followup = findViewById(R.id.followup);
+        followup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this, RequestFollowupActivity.class));
+            }
+        });
+
+        CardView certif = findViewById(R.id.certificate);
+        certif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this, DownloadCertificateActivity.class));
+            }
+        });
     }
 }

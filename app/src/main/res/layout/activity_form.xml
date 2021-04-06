@@ -5,7 +5,7 @@
     android:id="@+id/alreadyHaveAccount"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/honeydew"
+    android:background="@drawable/followup_gradient"
     android:paddingLeft="20dp"
     android:paddingTop="20dp"
     android:paddingRight="10dp"
@@ -209,7 +209,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Vous avez déjà déposé une demande?"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/olivine"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="@+id/btnRegister"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />

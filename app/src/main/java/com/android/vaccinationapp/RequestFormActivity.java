@@ -18,7 +18,7 @@ public class RequestFormActivity extends AppCompatActivity {
         filledform.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(FormActivity.this, .class));
+                startActivity(new Intent(RequestFormActivity.this, RequestFollowupActivity.class));
             }
         });
     }
