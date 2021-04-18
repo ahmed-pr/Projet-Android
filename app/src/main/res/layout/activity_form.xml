@@ -120,7 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
-        android:id="@+id/inputEmail"
+        android:id="@+id/inputEmail2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -161,10 +161,10 @@
         android:textColor="@color/teal_700"
         android:textColorHint="@color/teal_700"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/inputEmail"
+        app:layout_constraintEnd_toEndOf="@+id/inputEmail2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputEmail"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+        app:layout_constraintStart_toStartOf="@+id/inputEmail2"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail2" />
 
     <EditText
         android:id="@+id/inputCin"

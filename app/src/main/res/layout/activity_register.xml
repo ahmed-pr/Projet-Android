@@ -16,6 +16,7 @@
         android:id="@+id/logo"
         android:layout_width="166dp"
         android:layout_height="52dp"
+        android:layout_marginTop="16dp"
         android:text="Register"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -29,34 +30,10 @@
         app:layout_constraintVertical_bias="0.07999998" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputEmail2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_person"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Nom d'utilisateur"
-        android:inputType="textPersonName"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
-
-    <EditText
-        android:id="@+id/inputEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="10dp"
@@ -70,9 +47,10 @@
         android:textColor="@color/black"
         android:textColorHint="@color/white"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
         android:id="@+id/inputPasswd"
@@ -80,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_security"
+        android:drawableLeft="@drawable/ic_key"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Mot de passe"
@@ -92,13 +70,13 @@
         android:textColor="@color/black"
         android:textColorHint="@color/white"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/inputEmail"
+        app:layout_constraintEnd_toEndOf="@+id/inputEmail2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputEmail"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+        app:layout_constraintStart_toStartOf="@+id/inputEmail2"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail2" />
 
     <EditText
-        android:id="@+id/inputConformPassword"
+        android:id="@+id/inputConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -115,9 +93,8 @@
         android:textColor="@color/black"
         android:textColorHint="@color/white"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
+        app:layout_constraintEnd_toEndOf="@+id/inputPasswd"
+        app:layout_constraintStart_toStartOf="@+id/inputPasswd"
         app:layout_constraintTop_toBottomOf="@+id/inputPasswd" />
 
     <Button
@@ -129,16 +106,16 @@
         android:text="S'inscrire"
         android:textColor="@color/lily"
         app:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/inputConformPassword"
+        app:layout_constraintEnd_toEndOf="@+id/inputConfirmPassword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputConformPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputConformPassword" />
+        app:layout_constraintStart_toStartOf="@+id/inputConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword" />
 
     <TextView
         android:id="@+id/alreadyHaveAnAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Avez-vous déjà un compte?"
         android:textColor="@color/black"
         android:textStyle="bold|italic"
