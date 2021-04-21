@@ -11,6 +11,7 @@
         android:id="@+id/logo"
         android:layout_width="99dp"
         android:layout_height="61dp"
+        android:layout_marginTop="16dp"
         android:text="Login"
         android:textColor="@color/white"
         android:textSize="36sp"
@@ -23,7 +24,7 @@
         app:layout_constraintVertical_bias="0.07999998" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputPassword2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -32,20 +33,22 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Mot de passe"
-        android:inputType="textPersonName"
+        android:inputType="numberPassword"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/inputEmail"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/inputEmail2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputEmail"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+        app:layout_constraintStart_toStartOf="@+id/inputEmail2"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail2"
+        tools:ignore="TextFields" />
 
     <EditText
-        android:id="@+id/inputEmail"
+        android:id="@+id/inputEmail2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -63,6 +66,7 @@
         android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,10 +79,10 @@
         android:layout_marginTop="24dp"
         android:text="Mot de passe oublié?"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/inputPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
 
     <Button
         android:id="@+id/btnlogin"
@@ -87,11 +91,11 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_bg"
         android:text="Se connecter"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/lavender"
         app:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
+        app:layout_constraintEnd_toEndOf="@+id/inputPassword2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
+        app:layout_constraintStart_toStartOf="@+id/inputPassword2"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
 
     <LinearLayout
@@ -116,7 +120,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" S'inscrire"
-            android:textColor="@color/teal_700" />
+            android:textColor="@color/black"
+            android:textStyle="bold|italic" />
 
     </LinearLayout>
 
