@@ -216,7 +216,7 @@
         app:layout_constraintTop_toBottomOf="@+id/inputPasswd" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnRequest"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -237,9 +237,9 @@
         android:textColor="@color/black"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="@+id/btnRequest"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/btnRegister"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="@+id/btnRequest"
+        app:layout_constraintTop_toBottomOf="@+id/btnRequest"
         app:layout_constraintVertical_bias="0.111" />
 </androidx.constraintlayout.widget.ConstraintLayout>
