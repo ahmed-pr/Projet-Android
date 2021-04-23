@@ -10,6 +10,8 @@ public class Vaccination {
     private String request;
     private String second_dose_date;
     private String vaccination_state;
+    private String citizen;
+
 
     public String getFirst_dose_date() {
         return first_dose_date;
@@ -49,6 +51,14 @@ public class Vaccination {
 
     public void setVaccination_state(String vaccination_state) {
         this.vaccination_state = vaccination_state;
+    }
+
+    public String getCitizen() {
+        return citizen;
+    }
+
+    public void setCitizen(String citizen) {
+        this.citizen = citizen;
     }
 
     public Vaccination() {}
