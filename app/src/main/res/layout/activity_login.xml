@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_security"
+        android:drawableLeft="@drawable/ic_key"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Mot de passe"
@@ -91,7 +91,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_bg"
         android:text="Se connecter"
-        android:textColor="@color/lavender"
+        android:textColor="@color/lily"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/inputPassword2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -120,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" S'inscrire"
-            android:textColor="@color/black"
+            android:textColor="@color/cyprus"
             android:textStyle="bold|italic" />
 
     </LinearLayout>

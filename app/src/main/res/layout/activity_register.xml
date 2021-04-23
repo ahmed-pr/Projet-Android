@@ -234,7 +234,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Avez-vous déjà un compte?"
-        android:textColor="@color/black"
+        android:textColor="@color/cyprus"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnRequest"
