@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_gradient"
-    android:paddingLeft="20dp"
-    android:paddingTop="20dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp"
     tools:context=".RequestFormActivity">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/appbar" />
+
 
     <TextView
         android:id="@+id/logo"
@@ -31,7 +32,7 @@
         android:id="@+id/btnRequest"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/btn_bg"
         android:text="Soumettre"
         android:textColor="@color/lavender"
@@ -52,9 +53,8 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnRequest"
-        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="@+id/btnRequest"
         app:layout_constraintTop_toBottomOf="@+id/btnRequest"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.207" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

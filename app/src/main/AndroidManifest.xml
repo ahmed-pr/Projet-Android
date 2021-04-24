@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VaccinationApp">
-        <activity android:name=".RequestFormActivity"></activity>
-        <activity android:name=".RequestFollowupActivity" />
+        <activity android:name=".RequestFormActivity" android:parentActivityName=".DashboardActivity"/>
+        <activity android:name=".RequestFollowupActivity" android:parentActivityName=".DashboardActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".DownloadCertificateActivity" />
+        <activity android:name=".DownloadCertificateActivity" android:parentActivityName=".DashboardActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>

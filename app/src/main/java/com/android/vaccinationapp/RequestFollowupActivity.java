@@ -1,7 +1,9 @@
 package com.android.vaccinationapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +28,7 @@ import java.util.List;
 
 public class RequestFollowupActivity extends AppCompatActivity {
 
+    private Toolbar appbar;
     private TextView req;
     private TextView certif;
     private TextView textVaccinationState;
@@ -40,6 +43,12 @@ public class RequestFollowupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_followup);
+
+        appbar = findViewById(R.id.appbar);
+        setSupportActionBar(appbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         textVaccinationState = findViewById(R.id.textView6);
         textFirstDoseDate = findViewById(R.id.textView7);

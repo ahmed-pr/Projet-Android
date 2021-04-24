@@ -7,11 +7,16 @@
     android:background="@drawable/login_gradient"
     tools:context=".RequestFollowupActivity">
 
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/appbar" />
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="323dp"
         android:layout_height="38dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="108dp"
         android:text="Suivi de la demande"
         android:textAlignment="center"
         android:textColor="@color/white"

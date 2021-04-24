@@ -1,6 +1,7 @@
 package com.android.vaccinationapp;
 
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -39,4 +40,5 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
     }
+
 }

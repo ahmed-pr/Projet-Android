@@ -1,7 +1,9 @@
 package com.android.vaccinationapp;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Build;
@@ -19,6 +21,7 @@ import java.time.format.DateTimeFormatter;
 
 public class RequestFormActivity extends AppCompatActivity {
 
+    private Toolbar appbar;
     private TextView filledform;
     private Button request;
 
@@ -28,6 +31,12 @@ public class RequestFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
+        appbar = findViewById(R.id.appbar);
+        setSupportActionBar(appbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         request = findViewById(R.id.btnRequest);
         request.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +64,7 @@ public class RequestFormActivity extends AppCompatActivity {
                 requestsFirestoreManager = RequestsFirestoreManager.newInstance();
 
                 requestsFirestoreManager.createDocumentRequest(req);
-                Toast.makeText(RequestFormActivity.this, "Demande déposée", Toast.LENGTH_LONG).show();
+                Toast.makeText(RequestFormActivity.this, "Demande déposée avec succès", Toast.LENGTH_LONG).show();
             }
         });
 
