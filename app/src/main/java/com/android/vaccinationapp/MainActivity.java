@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.android.vaccinationapp.dao.DAOFactory;
+
 public class MainActivity extends AppCompatActivity {
 
     private final static int SECOND_CALL_ID = 1234;
