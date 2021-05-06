@@ -29,7 +29,7 @@
         app:layout_constraintVertical_bias="0.238" />
 
     <Button
-        android:id="@+id/btnRequest"
+        android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -52,9 +52,9 @@
         android:textColor="@color/olivine"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnRequest"
-        app:layout_constraintStart_toStartOf="@+id/btnRequest"
-        app:layout_constraintTop_toBottomOf="@+id/btnRequest"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister"
         app:layout_constraintVertical_bias="0.207" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

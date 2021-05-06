@@ -38,7 +38,7 @@ public class RequestActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        request = findViewById(R.id.btnRequest);
+        request = findViewById(R.id.btnRegister);
         request.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override

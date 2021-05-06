@@ -149,10 +149,12 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/LogOut"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="15dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:onClick="logout">
 
             <RelativeLayout
                 android:layout_width="match_parent"
