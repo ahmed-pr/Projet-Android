@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -44,6 +45,7 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void logout(View view){
+        Toast.makeText(DashboardActivity.this, "Déconnexion ...", Toast.LENGTH_SHORT).show();
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
         finish();
