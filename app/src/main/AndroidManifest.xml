@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VaccinationApp">
-        <activity android:name=".RequestFormActivity" android:parentActivityName=".DashboardActivity"/>
+        <activity android:name=".RequestActivity" android:parentActivityName=".DashboardActivity"/>
         <activity android:name=".RequestFollowupActivity" android:parentActivityName=".DashboardActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />

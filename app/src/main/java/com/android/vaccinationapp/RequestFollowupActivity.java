@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,10 +14,7 @@ import android.widget.Toast;
 import com.android.vaccinationapp.datamodel.Vaccination;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -108,7 +104,7 @@ public class RequestFollowupActivity extends AppCompatActivity {
         req.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RequestFollowupActivity.this, RequestFormActivity.class));
+                startActivity(new Intent(RequestFollowupActivity.this, RequestActivity.class));
             }
         });
 

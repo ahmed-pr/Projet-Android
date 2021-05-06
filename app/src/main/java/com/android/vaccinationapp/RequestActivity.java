@@ -19,7 +19,7 @@ import com.android.vaccinationapp.firestore.RequestsFirestoreManager;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class RequestFormActivity extends AppCompatActivity {
+public class RequestActivity extends AppCompatActivity {
 
     private Toolbar appbar;
     private TextView filledform;
@@ -30,7 +30,7 @@ public class RequestFormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form);
+        setContentView(R.layout.activity_request);
 
         appbar = findViewById(R.id.appbar);
         setSupportActionBar(appbar);
@@ -64,7 +64,7 @@ public class RequestFormActivity extends AppCompatActivity {
                 requestsFirestoreManager = RequestsFirestoreManager.newInstance();
 
                 requestsFirestoreManager.createDocumentRequest(req);
-                Toast.makeText(RequestFormActivity.this, "Demande déposée avec succès", Toast.LENGTH_LONG).show();
+                Toast.makeText(RequestActivity.this, "Demande déposée avec succès", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -72,7 +72,7 @@ public class RequestFormActivity extends AppCompatActivity {
         filledform.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RequestFormActivity.this, RequestFollowupActivity.class));
+                startActivity(new Intent(RequestActivity.this, RequestFollowupActivity.class));
             }
         });
     }
