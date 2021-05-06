@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progressBar2);
         Fullname = findViewById(R.id.inputName);
-        Email = findViewById(R.id.inputEmail2);
+        Email = findViewById(R.id.inputEmail);
         Password = findViewById(R.id.inputPasswd);
         register = findViewById(R.id.btnRegister);
         login = findViewById(R.id.alreadyHaveAnAccount);
@@ -79,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
