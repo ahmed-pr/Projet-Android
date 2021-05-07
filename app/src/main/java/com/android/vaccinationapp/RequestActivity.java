@@ -15,11 +15,16 @@ import android.widget.Toast;
 
 import com.android.vaccinationapp.datamodel.Request;
 import com.android.vaccinationapp.firestore.RequestsFirestoreManager;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class RequestActivity extends AppCompatActivity {
+
+    private FirebaseAuth fAuth;
+    private FirebaseUser fb_user ;
 
     private Toolbar appbar;
     private TextView filledform;
@@ -38,20 +43,20 @@ public class RequestActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        fb_user = getIntent().getExtras().getParcelable("currUser");
+
         request = findViewById(R.id.btnRegister);
         request.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
 
-                //String citizen = fAuth.getCurrentUser().getUid();
-                String citizen = "3zTDFGjZzAT7ue4aLqUH";
+                String citizen = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
                 System.out.println(dtf.format(now));
                 String request_date = dtf.format(now);
-                //String request_date = "21/04/2021";
 
                 String request_state = "";
 

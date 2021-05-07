@@ -11,8 +11,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class DashboardActivity extends AppCompatActivity {
+
+    private FirebaseUser user ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,8 @@ public class DashboardActivity extends AppCompatActivity {
         form.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, RequestActivity.class));
+                startActivity(new Intent(DashboardActivity.this, RequestActivity.class)
+                        .putExtra("currUser",user));
             }
         });
 
@@ -31,7 +35,8 @@ public class DashboardActivity extends AppCompatActivity {
         followup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, RequestFollowupActivity.class));
+                startActivity(new Intent(DashboardActivity.this, RequestFollowupActivity.class)
+                        .putExtra("currUser",user));
             }
         });
 
@@ -39,7 +44,8 @@ public class DashboardActivity extends AppCompatActivity {
         certif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, DownloadCertificateActivity.class));
+                startActivity(new Intent(DashboardActivity.this, DownloadCertificateActivity.class)
+                        .putExtra("currUser",user));
             }
         });
     }

@@ -15,6 +15,7 @@ import com.android.vaccinationapp.datamodel.Vaccination;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -51,11 +52,11 @@ public class RequestFollowupActivity extends AppCompatActivity {
         textSecondDoseDate = findViewById(R.id.textView8);
         textLocation = findViewById(R.id.textView9);
 
-        //String userID = fAuth.getCurrentUser().getUid();
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         final Task<QuerySnapshot> querySnapshotTask = db.collection("vaccinations")
-                //.whereEqualTo("user", "userID")
-                .whereEqualTo("request", "RgJmkgdAhuzr0DLe19KM")
+                .whereEqualTo("user", "userID")
+                //.whereEqualTo("request", "RgJmkgdAhuzr0DLe19KM")
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
