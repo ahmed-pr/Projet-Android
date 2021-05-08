@@ -47,4 +47,6 @@ dependencies {
     implementation 'com.android.support:design'
 
     implementation 'androidx.multidex:multidex'
+
+    implementation "com.airbnb.android:lottie:3.7.0"
 }
