@@ -18,12 +18,15 @@ import java.util.Map;
 
 public class DAO {
 
-    private FirebaseFirestore db;
+    private static FirebaseFirestore db;
     private boolean erreur;
 
     public DAO() {
-        db = FirebaseFirestore.getInstance();
         erreur = false;
+    }
+
+    public void connect(){
+        db = FirebaseFirestore.getInstance();
     }
 
     public ArrayList<CitizenRequest> listeDemande() {
@@ -44,7 +47,8 @@ public class DAO {
                             c.request_date = document2.getString("request_date");
                             c.request_state = document2.getString("request_state");
 
-                            Task<DocumentSnapshot> t1 = document2.getDocumentReference("citizen").get();
+                            //Task<DocumentSnapshot> t1 = document2.getDocumentReference("citizen").get();
+                            Task<DocumentSnapshot> t1 = db.document("/users/" + document2.getString("citizen")).get();
 
                             while (!erreur) {
                                 if (t1.isSuccessful()) {
@@ -97,11 +101,13 @@ public class DAO {
 
                     v.id_vaccination = document.getId();
                     v.centre = document.getString("location");
-                    v.date_vaccination = document.getString("date_vaccination");
+                    v.date_vaccination = document.getString("first_dose_date");
 
                     Log.d("Message", document.getId() + " => " + document.getData());
 
-                    Task<DocumentSnapshot> t2 = document.getDocumentReference("request").get();
+                    //Task<DocumentSnapshot> t2 = document.getDocumentReference("request").get();
+                    Task<DocumentSnapshot> t2 = db.document("/requests/" + document.getString("request")).get();
+
 
                     while (!erreur) {
                         if (t2.isSuccessful()) {
@@ -113,7 +119,8 @@ public class DAO {
                             v.request_date = document2.getString("request_date");
                             v.request_state = document2.getString("request_state");
 
-                            Task<DocumentSnapshot> t1 = document2.getDocumentReference("citizen").get();
+                            //Task<DocumentSnapshot> t1 = document2.getDocumentReference("citizen").get();
+                            Task<DocumentSnapshot> t1 = db.document("/users/" + document2.getString("citizen")).get();
 
                             while (!erreur) {
                                 if (t1.isSuccessful()) {
@@ -169,8 +176,9 @@ public class DAO {
 
             HashMap<String, Object> m = new HashMap<>();
             m.put("location", centre);
-            m.put("date_vaccination", d);
-            m.put("request", db.document("/requests/" + r));
+            m.put("first_dose_date", d);
+            //m.put("request", db.document("/requests/" + r));
+            m.put("request", r);
             m.put("vaccination_state", "");
 
 

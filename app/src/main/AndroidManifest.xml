@@ -9,18 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vaccination">
-        <activity android:name=".AcceuilAdmin">
+
+        <activity android:name=".users.DashboardActivity"/>
+        <activity android:name=".users.DownloadCertificateActivity"/>
+        <activity android:name=".users.LoginActivity"/>
+        <activity android:name=".users.RegisterActivity"/>
+        <activity android:name=".users.RequestActivity"/>
+        <activity android:name=".users.RequestFollowupActivity"/>
+        <activity android:name=".users.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ValiderVaccination" />
-        <activity android:name=".ListeVaccin" />
-        <activity android:name=".ConfirmerValidation" />
-        <activity android:name=".Demande" />
-        <activity android:name=".ListeDemande"></activity>
+
+        <activity android:name=".admin.AcceuilAdmin" />
+        <activity android:name=".admin.ValiderVaccination" />
+        <activity android:name=".admin.ListeVaccin" />
+        <activity android:name=".admin.ConfirmerValidation" />
+        <activity android:name=".admin.Demande" />
+        <activity android:name=".admin.ListeDemande"/>
     </application>
+
+    <meta-data
+        android:name="preloaded_fonts"
+        android:resource="@array/preloaded_fonts" />
 
 </manifest>
