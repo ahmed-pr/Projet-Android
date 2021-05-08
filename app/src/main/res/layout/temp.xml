@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
             <TableRow
                 android:id="@+id/row"
-                android:paddingVertical="10dp"
+                android:paddingVertical="20dp"
                 xmlns:android="http://schemas.android.com/apk/res/android" >
 
                 <TextView
