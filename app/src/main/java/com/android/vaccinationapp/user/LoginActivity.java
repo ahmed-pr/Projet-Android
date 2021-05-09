@@ -1,11 +1,10 @@
-package com.android.vaccinationapp.users;
+package com.android.vaccinationapp.user;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.admin.AcceuilAdmin;
+import com.android.vaccinationapp.admin.AccueilAdmin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -116,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Vous vous êtes connecté avec succès", Toast.LENGTH_SHORT).show();
 
             if (user.getEmail().equals("admin@e.com"))
-                startActivity(new Intent(this, AcceuilAdmin.class));
+                startActivity(new Intent(this, AccueilAdmin.class));
             else
                 startActivity(new Intent(this, DashboardActivity.class).putExtra("currUser", user));
 

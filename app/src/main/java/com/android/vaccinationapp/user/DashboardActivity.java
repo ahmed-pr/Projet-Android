@@ -1,4 +1,4 @@
-package com.android.vaccinationapp.users;
+package com.android.vaccinationapp.user;
 
 
 

@@ -1,4 +1,4 @@
-package com.android.vaccinationapp.users;
+package com.android.vaccinationapp.user;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

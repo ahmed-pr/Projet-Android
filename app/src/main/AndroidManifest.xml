@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vaccination">
 
-        <activity android:name=".users.DashboardActivity"/>
-        <activity android:name=".users.DownloadCertificateActivity"/>
-        <activity android:name=".users.LoginActivity"/>
-        <activity android:name=".users.RegisterActivity"/>
-        <activity android:name=".users.RequestActivity"/>
-        <activity android:name=".users.RequestFollowupActivity"/>
-        <activity android:name=".users.WelcomeActivity">
+        <activity android:name=".user.DashboardActivity"/>
+        <activity android:name=".user.DownloadCertificateActivity"/>
+        <activity android:name=".user.LoginActivity"/>
+        <activity android:name=".user.RegisterActivity"/>
+        <activity android:name=".user.RequestActivity"/>
+        <activity android:name=".user.RequestFollowupActivity"/>
+        <activity android:name=".user.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,12 +24,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".admin.AcceuilAdmin" />
+        <activity android:name=".admin.AccueilAdmin" />
         <activity android:name=".admin.ValiderVaccination" />
-        <activity android:name=".admin.ListeVaccin" />
+        <activity android:name=".admin.ListeVaccins" />
         <activity android:name=".admin.ConfirmerValidation" />
         <activity android:name=".admin.Demande" />
-        <activity android:name=".admin.ListeDemande"/>
+        <activity android:name=".admin.ListeDemandes"/>
     </application>
 
     <meta-data
