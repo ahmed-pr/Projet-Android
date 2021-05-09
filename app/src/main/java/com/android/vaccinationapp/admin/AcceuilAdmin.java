@@ -13,7 +13,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.modele.DAO;
+import com.android.vaccinationapp.firestore.DAO;
 import com.android.vaccinationapp.users.WelcomeActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;

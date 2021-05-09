@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.android.vaccinationapp.R;
 
-import com.android.vaccinationapp.model.Vaccination;
+import com.android.vaccinationapp.model.Vacc;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -62,15 +62,15 @@ public class RequestFollowupActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    List<Vaccination> vaccinationList=new ArrayList<>();
+                    List<Vacc> vaccinationList=new ArrayList<>();
 
                     //QuerySnapshot querySnapshot = task.getResult();
 
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         System.out.println(document.getId() + " => " + document.getData());
 
-                        vaccinationList.add(document.toObject(Vaccination.class));
-                        Vaccination vac = task.getResult().getDocuments().get(0).toObject(Vaccination.class);
+                        vaccinationList.add(document.toObject(Vacc.class));
+                        Vacc vac = task.getResult().getDocuments().get(0).toObject(Vacc.class);
 
                         //Vaccination vac = querySnapshot.toObject(Vaccination.class);
 
