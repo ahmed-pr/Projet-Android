@@ -16,11 +16,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.firestore.DAO;
-import com.android.vaccinationapp.model.Vaccination;
-import com.android.vaccinationapp.user.WelcomeActivity;
+import com.android.vaccinationapp.modele.DAO;
+import com.android.vaccinationapp.modele.Vaccination;
+import com.android.vaccinationapp.users.WelcomeActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -67,7 +66,7 @@ public class ValiderVaccination extends AppCompatActivity implements NavigationV
                         new DAO().validerVaccination(c.id_vaccination, true);
 
                         Toast.makeText(ValiderVaccination.this, "Le citoyen que vous avez selectionné est bien considéré comme vacciné dans notre système.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(ValiderVaccination.this, ListeVaccins.class);
+                        Intent intent = new Intent(ValiderVaccination.this, ListeVaccin.class);
                         startActivity(intent);
                     }
                 });
@@ -108,7 +107,7 @@ public class ValiderVaccination extends AppCompatActivity implements NavigationV
                         new DAO().validerVaccination(c.id_vaccination, false);
 
                         Toast.makeText(ValiderVaccination.this, "Le citoyen que vous avez selectionné a été bien considéré comme non vacciné dans notre système.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(ValiderVaccination.this, ListeVaccins.class);
+                        Intent intent = new Intent(ValiderVaccination.this, ListeVaccin.class);
                         startActivity(intent);
                     }
                 });
@@ -185,20 +184,20 @@ public class ValiderVaccination extends AppCompatActivity implements NavigationV
 
         switch (id){
             case R.id.acceuil :
-                startActivity(new Intent(this, AccueilAdmin.class));
+                startActivity(new Intent(this, AcceuilAdmin.class));
                 break;
             case R.id.demande:
-                startActivity(new Intent(this, ListeDemandes.class));
+                startActivity(new Intent(this, ListeDemande.class));
                 break;
             case R.id.citoyen:
-                startActivity(new Intent(this, ListeVaccins.class));
+                startActivity(new Intent(this, ListeVaccin.class));
                 break;
             case R.id.info:
-                startActivity(new Intent(this, ListeVaccins.class));
+                startActivity(new Intent(this, ListeVaccin.class));
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, WelcomeActivity.class));
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);

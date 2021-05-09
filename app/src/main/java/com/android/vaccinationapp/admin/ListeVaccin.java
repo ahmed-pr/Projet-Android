@@ -2,13 +2,13 @@ package com.android.vaccinationapp.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,95 +16,55 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.modele.CitizenRequest;
 import com.android.vaccinationapp.modele.DAO;
+import com.android.vaccinationapp.modele.Vaccination;
+
+
 import com.android.vaccinationapp.users.WelcomeActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-public class ConfirmerValidation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ListeVaccin extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_confirmer_validation);
-
-            menu();
-
-            Intent i = getIntent();
-            CitizenRequest c = i.getParcelableExtra("message");
-
-            DatePicker dp = (DatePicker) this.findViewById(R.id.date);
-
-            dp.setMinDate(new Date().getTime());
-
-            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-
-            try {
-                dp.setMaxDate(format.parse("31-12-2022").getTime());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_liste_vaccin);
+        menu();
 
 
 
-            Spinner spinner = (Spinner) findViewById(R.id.spinner);
-            // Create an ArrayAdapter using the string array and a default spinner layout
-            ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_list_item_activated_1,
-                    new String[]{"Centre Ibn Sina Fès", "Centre2", "Centre3", "Centre4"});
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_list_item_activated_1);
-            // Apply the adapter to the spinner
-            spinner.setAdapter(adapter);
+        TableLayout table = (TableLayout) this.findViewById(R.id.table);
 
+        DAO d = new DAO();
 
+        for(Vaccination c : d.listeCitoyenVaccin()) {
 
+            TableRow r = (TableRow)(LayoutInflater.from(this).inflate(R.layout.temp, null, false));
 
+            TableRow rv = (TableRow)(LayoutInflater.from(this).inflate(R.layout.tempv, null, false));
+            View vi = (View) rv.getChildAt(0);
+            rv.removeView(vi);
 
-
-
-
-            Button confirm = (Button) this.findViewById(R.id.confirm);
-            confirm.setOnClickListener(new View.OnClickListener() {
+            ((TextView) r.getChildAt(0)).setText(c.full_name);
+            ((Button) r.getChildAt(1)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-
-                     new DAO().ajouterVaccination(c.id_request, true, (String) spinner.getSelectedItem(),
-                             String.valueOf(dp.getDayOfMonth()) +"-"+  String.valueOf(dp.getMonth()) +"-"+ String.valueOf(dp.getYear()));
-
-
-
-
-                     Toast.makeText(ConfirmerValidation.this, "La demande de vaccination a été bien validée.", Toast.LENGTH_LONG).show();
-                     Intent intent = new Intent(ConfirmerValidation.this, ListeDemande.class);
-                     startActivity(intent);
-
-
+                    Intent intent = new Intent(ListeVaccin.this, ValiderVaccination.class);
+                    intent.putExtra("message", c);
+                    startActivity(intent);
                 }
             } ) ;
 
+            table.addView(vi);
+            table.addView(r);
+        }
 
 
 
-            Button annuler = (Button) this.findViewById(R.id.annuler);
-            annuler.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
 
-                    finish();
-                }
-            } ) ;
     }
-
-
-
-
-
 
 
 
@@ -177,6 +137,7 @@ public class ConfirmerValidation extends AppCompatActivity implements Navigation
 
         return true;
     }
+
 
 
 
