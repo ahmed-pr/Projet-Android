@@ -17,6 +17,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
 import com.android.vaccinationapp.model.CitizenRequest;
 import com.android.vaccinationapp.firestore.DAO;
@@ -211,7 +212,7 @@ public class Demande extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(this, WelcomeActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);

@@ -16,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
 import com.android.vaccinationapp.firestore.DAO;
 import com.android.vaccinationapp.model.Vaccination;
@@ -197,7 +198,7 @@ public class ValiderVaccination extends AppCompatActivity implements NavigationV
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(this, WelcomeActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);

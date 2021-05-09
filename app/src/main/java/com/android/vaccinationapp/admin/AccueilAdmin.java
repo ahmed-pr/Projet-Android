@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
 import com.android.vaccinationapp.firestore.DAO;
 import com.android.vaccinationapp.user.WelcomeActivity;
@@ -23,7 +24,7 @@ public class AccueilAdmin extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acceuil_admin);
+        setContentView(R.layout.activity_accueil_admin);
 
         new DAO().connect();
 
@@ -116,7 +117,7 @@ public class AccueilAdmin extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(this, WelcomeActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);

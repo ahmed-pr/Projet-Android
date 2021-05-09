@@ -2,38 +2,37 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.vaccinationapp">
 
+    <meta-data
+        android:name="preloaded_fonts"
+        android:resource="@array/preloaded_fonts" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vaccination">
-
-        <activity android:name=".user.DashboardActivity"/>
-        <activity android:name=".user.DownloadCertificateActivity"/>
-        <activity android:name=".user.LoginActivity"/>
-        <activity android:name=".user.RegisterActivity"/>
-        <activity android:name=".user.RequestActivity"/>
-        <activity android:name=".user.RequestFollowupActivity"/>
-        <activity android:name=".user.WelcomeActivity">
+        <activity android:name=".user.WelcomeActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".user.DashboardActivity" />
+        <activity android:name=".user.DownloadCertificateActivity" />
+        <activity android:name=".user.LoginActivity" />
+        <activity android:name=".user.RegisterActivity" />
+        <activity android:name=".user.RequestActivity" />
+        <activity android:name=".user.RequestFollowupActivity" />
         <activity android:name=".admin.AccueilAdmin" />
         <activity android:name=".admin.ValiderVaccination" />
         <activity android:name=".admin.ListeVaccins" />
         <activity android:name=".admin.ConfirmerValidation" />
         <activity android:name=".admin.Demande" />
-        <activity android:name=".admin.ListeDemandes"/>
+        <activity android:name=".admin.ListeDemandes" />
     </application>
-
-    <meta-data
-        android:name="preloaded_fonts"
-        android:resource="@array/preloaded_fonts" />
 
 </manifest>
