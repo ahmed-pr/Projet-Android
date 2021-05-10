@@ -17,10 +17,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.modele.CitizenRequest;
-import com.android.vaccinationapp.modele.DAO;
-import com.android.vaccinationapp.users.WelcomeActivity;
+import com.android.vaccinationapp.model.CitizenRequest;
+import com.android.vaccinationapp.firestore.DAO;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -82,7 +82,7 @@ public class ConfirmerValidation extends AppCompatActivity implements Navigation
 
 
                      Toast.makeText(ConfirmerValidation.this, "La demande de vaccination a été bien validée.", Toast.LENGTH_LONG).show();
-                     Intent intent = new Intent(ConfirmerValidation.this, ListeDemande.class);
+                     Intent intent = new Intent(ConfirmerValidation.this, ListeDemandes.class);
                      startActivity(intent);
 
 
@@ -157,20 +157,20 @@ public class ConfirmerValidation extends AppCompatActivity implements Navigation
 
         switch (id){
             case R.id.acceuil :
-                startActivity(new Intent(this, AcceuilAdmin.class));
+                startActivity(new Intent(this, AccueilAdmin.class));
                 break;
             case R.id.demande:
-                startActivity(new Intent(this, ListeDemande.class));
+                startActivity(new Intent(this, ListeDemandes.class));
                 break;
             case R.id.citoyen:
-                startActivity(new Intent(this, ListeVaccin.class));
+                startActivity(new Intent(this, ListeVaccins.class));
                 break;
             case R.id.info:
-                startActivity(new Intent(this, ListeVaccin.class));
+                startActivity(new Intent(this, ListeVaccins.class));
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(this, WelcomeActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);

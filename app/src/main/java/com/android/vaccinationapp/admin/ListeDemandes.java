@@ -18,10 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.model.CitizenRequest;
 import com.android.vaccinationapp.firestore.DAO;
+import com.android.vaccinationapp.model.CitizenRequest;
 
-import com.android.vaccinationapp.user.WelcomeActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 

@@ -13,7 +13,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vaccination">
-        <activity android:name=".user.WelcomeActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,12 +21,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".user.WelcomeActivity" />
+
         <activity android:name=".user.DashboardActivity" />
-        <activity android:name=".user.DownloadCertificateActivity" />
+        <activity android:name=".user.DownloadCertificateActivity" android:parentActivityName=".user.DashboardActivity" />
         <activity android:name=".user.LoginActivity" />
         <activity android:name=".user.RegisterActivity" />
-        <activity android:name=".user.RequestActivity" />
-        <activity android:name=".user.RequestFollowupActivity" />
+        <activity android:name=".user.RequestActivity" android:parentActivityName=".user.DashboardActivity" />
+        <activity android:name=".user.RequestFollowupActivity" android:parentActivityName=".user.DashboardActivity" />
+
         <activity android:name=".admin.AccueilAdmin" />
         <activity android:name=".admin.ValiderVaccination" />
         <activity android:name=".admin.ListeVaccins" />

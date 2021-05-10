@@ -55,22 +55,93 @@ public class RequestFollowupActivity extends AppCompatActivity {
 
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        final Task<QuerySnapshot> querySnapshotTask = db.collection("vaccinations")
-                .whereEqualTo("user", "userID")
+        final Task<QuerySnapshot> querySnapshotTask1 = db.collection("requests").whereEqualTo("citizen", userID)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+
+                            for (QueryDocumentSnapshot document1 : task.getResult()) {
+                                final Task<QuerySnapshot> querySnapshotTask = db.collection("vaccinations").whereEqualTo("request", document1.getId())
+                                        //.whereEqualTo("request", "RgJmkgdAhuzr0DLe19KM")
+                                        .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                if (task.isSuccessful()) {
+                                                    List<Vacc> vaccinationList=new ArrayList<>();
+
+                                                    //QuerySnapshot querySnapshot = task.getResult();
+
+                                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                                        System.out.println(document.getId() + " => " + document.getData());
+
+                                                        vaccinationList.add(document.toObject(Vacc.class));
+                                                        Vacc vac = task.getResult().getDocuments().get(0).toObject(Vacc.class);
+
+                                                        //Vaccination vac = querySnapshot.toObject(Vaccination.class);
+
+                                                        String first_dose_date = vac.getFirst_dose_date();
+                                                        String location = vac.getLocation();
+                                                        String second_dose_date = vac.getSecond_dose_date();
+
+                                                        String vaccination_state = vac.getVaccination_state();
+                                                        if (first_dose_date != null) {
+                                                            if (vaccination_state == "")
+                                                                vaccination_state = "Non encore vacciné";
+                                                            if (vaccination_state.equals("v"))
+                                                                vaccination_state = "Vous avez été vacciné.";
+                                                            if (vaccination_state.equals("n"))
+                                                                vaccination_state = "Vous n'avez pas assisté au rendez-vous pour être vacciné.";
+                                                        }
+
+                                                        textVaccinationState.setText(vaccination_state);
+                                                        textFirstDoseDate.setText(first_dose_date);
+                                                        textSecondDoseDate.setText(second_dose_date);
+                                                        textLocation.setText(location);
+
+
+                                                    }
+                                                } else {
+                                                    Toast.makeText(RequestFollowupActivity.this,"Failed to fetch data",Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
+
+
+
+
+
+
+
+
+
+
+
+                            }
+                        }
+                        else {
+
+                        }
+                    }
+                });
+
+
+
+        /*final Task<QuerySnapshot> querySnapshotTask = db.collection("vaccinations").whereEqualTo("user", "userID")
                 //.whereEqualTo("request", "RgJmkgdAhuzr0DLe19KM")
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    List<Vacc> vaccinationList=new ArrayList<>();
+                    List<Vaccination> vaccinationList=new ArrayList<>();
 
                     //QuerySnapshot querySnapshot = task.getResult();
 
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         System.out.println(document.getId() + " => " + document.getData());
 
-                        vaccinationList.add(document.toObject(Vacc.class));
-                        Vacc vac = task.getResult().getDocuments().get(0).toObject(Vacc.class);
+                        vaccinationList.add(document.toObject(Vaccination.class));
+                        Vaccination vac = task.getResult().getDocuments().get(0).toObject(Vaccination.class);
 
                         //Vaccination vac = querySnapshot.toObject(Vaccination.class);
 
@@ -90,7 +161,7 @@ public class RequestFollowupActivity extends AppCompatActivity {
                     Toast.makeText(RequestFollowupActivity.this,"Failed to fetch data",Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
 
         certif = findViewById(R.id.textView11);

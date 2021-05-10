@@ -4,8 +4,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.android.vaccinationapp.model.CitizenRequest;
 import com.android.vaccinationapp.model.Vaccination;
+import com.android.vaccinationapp.model.CitizenRequest;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -32,55 +32,55 @@ public class DAO {
 
     public ArrayList<CitizenRequest> listeDemande() {
 
-                ArrayList<CitizenRequest> l = new ArrayList<CitizenRequest>();
+        ArrayList<CitizenRequest> l = new ArrayList<CitizenRequest>();
 
-                Task<QuerySnapshot> t2 = db.collection("requests").whereEqualTo("request_state", "").get().addOnFailureListener(this.onFailureListener());
+        Task<QuerySnapshot> t2 = db.collection("requests").whereEqualTo("request_state", "").get().addOnFailureListener(this.onFailureListener());
 
 
-                while (!erreur) {
-                    if (t2.isSuccessful()) {
+        while (!erreur) {
+            if (t2.isSuccessful()) {
 
-                        for (QueryDocumentSnapshot document2 : t2.getResult()) {
+                for (QueryDocumentSnapshot document2 : t2.getResult()) {
 
-                            CitizenRequest c = new CitizenRequest();
+                    CitizenRequest c = new CitizenRequest();
 
-                            c.id_request = document2.getId();
-                            c.request_date = document2.getString("request_date");
-                            c.request_state = document2.getString("request_state");
+                    c.id_request = document2.getId();
+                    c.request_date = document2.getString("request_date");
+                    c.request_state = document2.getString("request_state");
 
-                            //Task<DocumentSnapshot> t1 = document2.getDocumentReference("citizen").get();
-                            Task<DocumentSnapshot> t1 = db.document("/users/" + document2.getString("citizen")).get();
+                    //Task<DocumentSnapshot> t1 = document2.getDocumentReference("citizen").get();
+                    Task<DocumentSnapshot> t1 = db.document("/users/" + document2.getString("citizen")).get();
 
-                            while (!erreur) {
-                                if (t1.isSuccessful()) {
+                    while (!erreur) {
+                        if (t1.isSuccessful()) {
 
-                                    DocumentSnapshot document = t1.getResult();
+                            DocumentSnapshot document = t1.getResult();
 
-                                    Log.d("Message", document.getId() + " => " + document.getData());
+                            Log.d("Message", document.getId() + " => " + document.getData());
 
-                                    c.id = document.getId();
-                                    c.full_name = document.getString("full_name");
-                                    c.email = document.getString("email");
-                                    c.phone_number = document.getString("phone_number");
-                                    c.cin = document.getString("cin");
-                                    c.age = document.getLong("age").intValue();
-                                    c.address = document.getString("address");
+                            c.id = document.getId();
+                            c.full_name = document.getString("full_name");
+                            c.email = document.getString("email");
+                            c.phone_number = document.getString("phone_number");
+                            c.cin = document.getString("cin");
+                            c.age = document.getLong("age").intValue();
+                            c.address = document.getString("address");
 
-                                    l.add(c);
+                            l.add(c);
 
-                                    break;
-
-                                }
-                            }
-
+                            break;
 
                         }
-                        break;
                     }
+
+
                 }
+                break;
+            }
+        }
 
 
-                return l;
+        return l;
 
 
     }
@@ -190,7 +190,7 @@ public class DAO {
             }
 
 
-             Task t1 = db.collection("requests").document(r).update("request_state","v").addOnFailureListener(this.onFailureListener());
+            Task t1 = db.collection("requests").document(r).update("request_state","v").addOnFailureListener(this.onFailureListener());
 
             while(!(t1.isComplete() || erreur)){
                 ;

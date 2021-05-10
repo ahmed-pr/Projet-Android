@@ -103,7 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
                             DocumentReference documentReference = fstore.collection("users").document(userID) ;
                             Map<String , Object> user = new HashMap<>();
                             user.put("address", ville);
-                            user.put("age", age);
+                            user.put("age", Integer.valueOf(age));
                             user.put("cin", cin);
                             user.put("email", email);
                             user.put("full_name", fullname);
