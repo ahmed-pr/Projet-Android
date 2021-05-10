@@ -30,9 +30,6 @@ public class UsersFirestoreManager {
         usersCollectionReference.add(user);
     }
 
-    public void sendUsersBulk() {
-        createDocument(new User("EL BIACHE Houda", "houdaelbiache@gmail.com", "0653818691", "CD286763", 21, "Fès"));
-    }
-
+    
 }
 
