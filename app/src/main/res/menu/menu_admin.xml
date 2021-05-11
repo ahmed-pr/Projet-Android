@@ -6,8 +6,8 @@
         android:title="Demandes de vaccination" />
     <item android:id="@+id/citoyen"
         android:title="Approuvation" />
-    <item android:id="@+id/info"
-        android:title="Infos" />
+    <item android:id="@+id/stat"
+        android:title="Statistiques" />
     <item android:id="@+id/deconnecter"
         android:title="Se Déconnecter" />
 </menu>
