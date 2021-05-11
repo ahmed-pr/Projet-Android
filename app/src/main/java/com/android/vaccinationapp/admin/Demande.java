@@ -18,9 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.model.CitizenRequest;
-import com.android.vaccinationapp.firestore.DAO;
-import com.android.vaccinationapp.user.WelcomeActivity;
+import com.android.vaccinationapp.modele.CitizenRequest;
+import com.android.vaccinationapp.modele.DAO;
+import com.android.vaccinationapp.users.WelcomeActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -123,7 +123,7 @@ public class Demande extends AppCompatActivity implements NavigationView.OnNavig
                         new DAO().ajouterVaccination(c.id_request, false, null, null);
 
                         Toast.makeText(Demande.this, "La demande de vaccination a été bien rejetée.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(Demande.this, ListeDemandes.class);
+                        Intent intent = new Intent(Demande.this, ListeDemande.class);
                         startActivity(intent);
                     }
                 });
@@ -198,16 +198,16 @@ public class Demande extends AppCompatActivity implements NavigationView.OnNavig
 
         switch (id){
             case R.id.acceuil :
-                startActivity(new Intent(this, AccueilAdmin.class));
+                startActivity(new Intent(this, AcceuilAdmin.class));
                 break;
             case R.id.demande:
-                startActivity(new Intent(this, ListeDemandes.class));
+                startActivity(new Intent(this, ListeDemande.class));
                 break;
             case R.id.citoyen:
-                startActivity(new Intent(this, ListeVaccins.class));
+                startActivity(new Intent(this, ListeVaccin.class));
                 break;
-            case R.id.info:
-                startActivity(new Intent(this, ListeVaccins.class));
+            case R.id.stat:
+                startActivity(new Intent(this, Stat.class));
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
