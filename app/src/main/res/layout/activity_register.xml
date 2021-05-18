@@ -10,7 +10,7 @@
     android:paddingTop="20dp"
     android:paddingRight="10dp"
     android:paddingBottom="10dp"
-    tools:context=".RegisterActivity">
+    tools:context=".user.RegisterActivity">
 
 
     <TextView

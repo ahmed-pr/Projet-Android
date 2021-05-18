@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeActivity">
+    tools:context=".user.WelcomeActivity">
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -25,6 +25,7 @@
         android:layout_width="147dp"
         android:layout_height="47dp"
         android:text="Login"
+        app:backgroundTint="@color/teal_700"
         app:icon="@drawable/ic_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +39,7 @@
         android:layout_width="147dp"
         android:layout_height="46dp"
         android:text="REGISTER"
+        app:backgroundTint="@color/teal_700"
         app:icon="@drawable/ic_registration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +53,7 @@
         android:layout_height="67dp"
         android:text="Bienvenue sur votre plateforme d'e-vaccination!"
         android:textAlignment="textStart"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/test"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/animationView"
@@ -67,6 +69,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="4dp"
         android:text="Infos"
+        app:backgroundTint="@color/teal_700"
         app:icon="@drawable/ic_infos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,5 +77,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         app:layout_constraintVertical_bias="0.093" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/abc_vector_test"
+        android:tint="@color/test"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abc_vector_test" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

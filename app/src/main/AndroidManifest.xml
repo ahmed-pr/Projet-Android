@@ -33,10 +33,13 @@
 
         <activity android:name=".admin.AccueilAdmin" />
         <activity android:name=".admin.ValiderVaccination" />
-        <activity android:name=".admin.ListeVaccins" />
         <activity android:name=".admin.ConfirmerValidation" />
         <activity android:name=".admin.Demande" />
-        <activity android:name=".admin.ListeDemandes" />
+        <activity android:name=".admin.ListeDemande" />
+        <activity android:name=".admin.ListeVaccin" />
+        <activity android:name=".admin.Stat" />
+
+
     </application>
 
 </manifest>

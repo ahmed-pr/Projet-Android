@@ -9,35 +9,30 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.modele.CitizenRequest;
-import com.android.vaccinationapp.modele.DAO;
-import com.android.vaccinationapp.modele.Vaccination;
-import com.android.vaccinationapp.users.WelcomeActivity;
+import com.android.vaccinationapp.firestore.DAO;
+import com.android.vaccinationapp.model.CitizenRequest;
+import com.android.vaccinationapp.model.Vaccination;
+import com.android.vaccinationapp.user.WelcomeActivity;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -281,7 +276,7 @@ public class Stat extends AppCompatActivity implements NavigationView.OnNavigati
 
         switch (id){
             case R.id.acceuil :
-                startActivity(new Intent(this, AcceuilAdmin.class));
+                startActivity(new Intent(this, AccueilAdmin.class));
                 break;
             case R.id.demande:
                 startActivity(new Intent(this, ListeDemande.class));
@@ -294,7 +289,7 @@ public class Stat extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(this, WelcomeActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);

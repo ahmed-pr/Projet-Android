@@ -4,8 +4,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.android.vaccinationapp.model.Vaccination;
 import com.android.vaccinationapp.model.CitizenRequest;
+import com.android.vaccinationapp.model.Vaccination;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -16,6 +16,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class DAO {
 
@@ -30,12 +31,15 @@ public class DAO {
         db = FirebaseFirestore.getInstance();
     }
 
-    public ArrayList<CitizenRequest> listeDemande() {
+    public ArrayList<CitizenRequest> listeDemande(boolean b) {
 
         ArrayList<CitizenRequest> l = new ArrayList<CitizenRequest>();
 
-        Task<QuerySnapshot> t2 = db.collection("requests").whereEqualTo("request_state", "").get().addOnFailureListener(this.onFailureListener());
-
+        Task<QuerySnapshot> t2 = null;
+        if (b)
+            t2 = db.collection("requests").whereEqualTo("request_state", "").get().addOnFailureListener(this.onFailureListener());
+        else
+            t2 = db.collection("requests").get().addOnFailureListener(this.onFailureListener());
 
         while (!erreur) {
             if (t2.isSuccessful()) {
@@ -166,6 +170,37 @@ public class DAO {
         }
 
 
+        return l;
+    }
+
+
+
+    public ArrayList<Vaccination> listeDemandeVaccin() {
+
+        ArrayList<Vaccination> l = new ArrayList<Vaccination>();
+
+        Task<QuerySnapshot> t3 = db.collection("vaccinations").get().addOnFailureListener(this.onFailureListener());
+
+        while (!erreur) {
+            if (t3.isSuccessful()) {
+
+                for (QueryDocumentSnapshot document : t3.getResult()) {
+
+                    Vaccination v = new Vaccination();
+
+                    v.id_vaccination = document.getId();
+                    v.centre = document.getString("location");
+                    v.date_vaccination = document.getString("first_dose_date");
+
+                    l.add(v);
+                }
+
+                break;
+            }
+        }
+
+
+        Log.d("message", "La taille : " + String.valueOf(l.size()));
         return l;
     }
 

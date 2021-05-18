@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
 import com.android.vaccinationapp.firestore.DAO;
+import com.android.vaccinationapp.user.WelcomeActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -32,7 +33,7 @@ public class AccueilAdmin extends AppCompatActivity implements NavigationView.On
         CardView c = (CardView) this.findViewById(R.id.form);
         c.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(AccueilAdmin.this, ListeDemandes.class);
+                Intent intent = new Intent(AccueilAdmin.this, ListeDemande.class);
                 startActivity(intent);
             }
         } ) ;
@@ -40,7 +41,7 @@ public class AccueilAdmin extends AppCompatActivity implements NavigationView.On
         c = (CardView) this.findViewById(R.id.followup);
         c.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(AccueilAdmin.this, ListeVaccins.class);
+                Intent intent = new Intent(AccueilAdmin.this, ListeVaccin.class);
                 startActivity(intent);
             }
         } ) ;
@@ -49,8 +50,17 @@ public class AccueilAdmin extends AppCompatActivity implements NavigationView.On
         c = (CardView) this.findViewById(R.id.info);
         c.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                /*Intent intent = new Intent(AcceuilAdmin.this, ListeVaccin.class);
-                startActivity(intent);*/
+
+                startActivity(new Intent(AccueilAdmin.this, Stat.class));
+            }
+        } ) ;
+
+        c = (CardView) this.findViewById(R.id.dec);
+        c.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(AccueilAdmin.this, WelcomeActivity.class));
             }
         } ) ;
 
@@ -106,13 +116,13 @@ public class AccueilAdmin extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, AccueilAdmin.class));
                 break;
             case R.id.demande:
-                startActivity(new Intent(this, ListeDemandes.class));
+                startActivity(new Intent(this, ListeDemande.class));
                 break;
             case R.id.citoyen:
-                startActivity(new Intent(this, ListeVaccins.class));
+                startActivity(new Intent(this, ListeVaccin.class));
                 break;
-            case R.id.info:
-                startActivity(new Intent(this, ListeVaccins.class));
+            case R.id.stat:
+                startActivity(new Intent(this, Stat.class));
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();

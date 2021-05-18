@@ -16,10 +16,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.android.vaccinationapp.MainActivity;
 import com.android.vaccinationapp.R;
-import com.android.vaccinationapp.modele.DAO;
-import com.android.vaccinationapp.modele.Vaccination;
-import com.android.vaccinationapp.users.WelcomeActivity;
+import com.android.vaccinationapp.firestore.DAO;
+import com.android.vaccinationapp.model.Vaccination;
+import com.android.vaccinationapp.user.WelcomeActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -184,7 +185,7 @@ public class ValiderVaccination extends AppCompatActivity implements NavigationV
 
         switch (id){
             case R.id.acceuil :
-                startActivity(new Intent(this, AcceuilAdmin.class));
+                startActivity(new Intent(this, AccueilAdmin.class));
                 break;
             case R.id.demande:
                 startActivity(new Intent(this, ListeDemande.class));
@@ -197,7 +198,7 @@ public class ValiderVaccination extends AppCompatActivity implements NavigationV
                 break;
             case R.id.deconnecter:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(this, WelcomeActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);
