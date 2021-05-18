@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <resources>
     <string name="app_name">e-Vaccination</string>
 
@@ -6,4 +7,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
+=======
+<resources>
+    <string name="app_name">e-VaccinationApp</string>
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
 </resources>

@@ -4,7 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
+<<<<<<< HEAD
     android:background="?attr/colorPrimary"
+=======
+    android:background="@color/purple_700"
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
     android:id="@+id/toolBar"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 

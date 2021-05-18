@@ -1,6 +1,10 @@
 package com.android.vaccinationapp.firestore;
 
+<<<<<<< HEAD
 import com.android.vaccinationapp.model.Request;
+=======
+import com.android.vaccinationapp.datamodel.Request;
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 

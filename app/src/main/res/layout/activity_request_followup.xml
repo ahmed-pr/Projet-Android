@@ -140,6 +140,7 @@
                 app:layout_constraintVertical_bias="0.121" />
 
             <TextView
+<<<<<<< HEAD
                 android:id="@+id/map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -151,6 +152,8 @@
                 app:layout_constraintVertical_bias="0.121" />
 
             <TextView
+=======
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

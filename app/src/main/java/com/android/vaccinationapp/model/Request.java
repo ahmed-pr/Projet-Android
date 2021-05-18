@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.android.vaccinationapp.model;
+=======
+package com.android.vaccinationapp.datamodel;
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
 
 import com.google.firebase.firestore.DocumentId;
 

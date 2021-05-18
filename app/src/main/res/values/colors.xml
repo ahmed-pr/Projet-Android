@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
@@ -19,4 +20,25 @@
     <color name="honeydew">#F0FFF0</color>
 
     <color name="test">#FF017A79</color>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#fad0c4</color>
+    <color name="teal_700">#721b65</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="cyprus">#721b65</color>
+    <color name="olivine">#b80d57</color>
+    <color name="golden_glow">#f8615a</color>
+    <color name="mandy">#ffd868</color>
+
+    <color name="lavender">#cfc7f8</color>
+    <color name="lily">#d299c2</color>
+    <color name="honeydew">#F0FFF0</color>
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
 </resources>

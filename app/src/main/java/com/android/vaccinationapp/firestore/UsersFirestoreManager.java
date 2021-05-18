@@ -1,10 +1,17 @@
 package com.android.vaccinationapp.firestore;
 
+<<<<<<< HEAD
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import com.android.vaccinationapp.model.User;
 
+=======
+import com.android.vaccinationapp.datamodel.User;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
 import static com.android.vaccinationapp.firestore.UsersFirestoreDbContract.COLLECTION_NAME;
 
 public class UsersFirestoreManager {

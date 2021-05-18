@@ -33,7 +33,11 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Mot de passe"
+<<<<<<< HEAD
         android:inputType="textPassword"
+=======
+        android:inputType="numberPassword"
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
@@ -59,7 +63,11 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Email"
+<<<<<<< HEAD
         android:inputType="textEmailAddress"
+=======
+        android:inputType="textPersonName"
+>>>>>>> 23e307d3430f3024371d1d548381a1a0923a590d
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
