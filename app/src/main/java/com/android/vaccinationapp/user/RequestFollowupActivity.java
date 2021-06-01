@@ -63,14 +63,12 @@ public class RequestFollowupActivity extends AppCompatActivity {
 
                             for (QueryDocumentSnapshot document1 : task.getResult()) {
                                 final Task<QuerySnapshot> querySnapshotTask = db.collection("vaccinations").whereEqualTo("request", document1.getId())
-                                        //.whereEqualTo("request", "RgJmkgdAhuzr0DLe19KM")
                                         .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                             @Override
                                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                                 if (task.isSuccessful()) {
                                                     List<Vacc> vaccinationList=new ArrayList<>();
 
-                                                    //QuerySnapshot querySnapshot = task.getResult();
 
                                                     for (QueryDocumentSnapshot document : task.getResult()) {
                                                         System.out.println(document.getId() + " => " + document.getData());
@@ -78,7 +76,6 @@ public class RequestFollowupActivity extends AppCompatActivity {
                                                         vaccinationList.add(document.toObject(Vacc.class));
                                                         Vacc vac = task.getResult().getDocuments().get(0).toObject(Vacc.class);
 
-                                                        //Vaccination vac = querySnapshot.toObject(Vaccination.class);
 
                                                         String first_dose_date = vac.getFirst_dose_date();
                                                         String location = vac.getLocation();
